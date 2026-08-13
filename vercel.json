@@ -1,10 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/**/*.py": {
-      "excludeFiles": "{public/**,data/cache/**,__pycache__/**,.git/**,.vercel/**}",
-      "maxDuration": 60,
-      "memory": 1024
-    }
+    "api/status.py": { "maxDuration": 30, "memory": 1024 },
+    "api/apts.py": { "maxDuration": 15, "memory": 1024 },
+    "api/campaigns.py": { "maxDuration": 15, "memory": 1024 },
+    "api/watchlist.py": { "maxDuration": 60, "memory": 1024 },
+    "api/kev.py": { "maxDuration": 30, "memory": 1024 },
+    "api/iocs.py": { "maxDuration": 60, "memory": 1024 },
+    "api/search.py": { "maxDuration": 60, "memory": 1024 },
+    "api/refresh.py": { "maxDuration": 60, "memory": 1024 }
   }
 }
