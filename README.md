@@ -23,7 +23,7 @@ Each card is a short, cited summary (MITRE ATT&CK, CISA, Trend Micro, DoJ, etc.)
 
 Personal pins live in `localStorage` (`threatbench.pins`).
 
-## Run
+## Run locally
 
 ```bash
 python3 server.py
@@ -32,7 +32,19 @@ python3 server.py
 
 Port override: `THREATBENCH_PORT=8080`. Cache TTL (seconds): `THREATBENCH_TTL=300`.
 
-Stdlib only. First load warms the four public feeds in the background (5-minute cache under `data/cache/`).
+Stdlib only. First load warms the four public feeds in the background (5-minute cache under `/tmp` or `data/cache/`).
+
+## Deploy (Vercel)
+
+Workbench static files live in `public/`. Feed proxies are Python functions under `api/`.
+
+```bash
+npx vercel@latest --prod
+```
+
+After the first deploy, attach a custom domain in the Vercel project: Settings → Domains. The Workbench does not hard-code a hostname.
+
+`refresh` and first-hit watchlist/KEV calls pull live feeds (up to ~8 MB). Responses are CDN-cached for five minutes (`s-maxage=300`).
 
 ## CLI
 
