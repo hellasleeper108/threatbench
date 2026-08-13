@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>THREATBENCH 1.3</title>
+  <link rel="stylesheet" href="/css/workbench.css">
+</head>
+<body>
+  <div id="pointer" aria-hidden="true">
+    <svg viewBox="0 0 16 16" class="idle" shape-rendering="crispEdges">
+      <path fill="#000" d="M1 1h2v12H1V1zm2 0h1v1H3V1zm1 1h1v1H4V2zm1 1h1v1H5V3zm1 1h1v1H6V4zm1 1h1v1H7V5zm1 1h1v1H8V6zm1 1h1v1H9V7zm1 1h1v1h-1V8z"/>
+      <path fill="#ff8800" d="M2 2h1v10H2V2zm1 1h1v8H3V3zm1 1h1v3H4V4zm1 1h1v2H5V5z"/>
+      <path fill="#fff" d="M2 2h1v1H2V2z"/>
+    </svg>
+    <svg viewBox="0 0 16 16" class="busy" shape-rendering="crispEdges">
+      <rect x="3" y="3" width="10" height="10" fill="#000"/>
+      <rect x="4" y="4" width="8" height="8" fill="#ff8800"/>
+      <rect x="7" y="4" width="2" height="4" fill="#000"/>
+      <rect x="7" y="7" width="4" height="2" fill="#000"/>
+    </svg>
+  </div>
+
+  <div id="boot">
+    <div class="floppy" aria-hidden="true">
+      <div class="disk">
+        <div class="label">THREATBENCH<br>WB 1.3<br>DF0:</div>
+        <div class="hub"></div>
+      </div>
+    </div>
+    <div class="rom"></div>
+    <div class="bar"><i></i></div>
+    <div class="hint">CLICK OR PRESS RETURN TO SKIP</div>
+    <button id="skip" style="position:absolute;inset:0;opacity:0;cursor:none" aria-label="Skip boot"></button>
+  </div>
+
+  <div id="workbench">
+    <div id="menubar">
+      <div class="brand"><b>WB</b>  THREATBENCH 1.3  CHIP:2048K  FAST:8192K</div>
+      <div class="clock"><span id="led" title="DF0 motor"></span><span id="clock"></span></div>
+    </div>
+
+    <div id="desktop">
+      <div id="boing" aria-hidden="true"></div>
+
+      <button class="icon" style="left:18px;top:16px" data-open="cli" title="AmigaDOS CLI">
+        <svg class="glyph" viewBox="0 0 48 40" shape-rendering="crispEdges">
+          <rect x="4" y="4" width="40" height="28" fill="#fff"/>
+          <rect x="6" y="6" width="36" height="24" fill="#000"/>
+          <rect x="10" y="12" width="10" height="3" fill="#ff8800"/>
+          <rect x="22" y="20" width="14" height="3" fill="#fff"/>
+        </svg>
+        <span class="name">CLI</span>
+      </button>
+      <button class="icon" style="left:18px;top:100px" data-open="apts">
+        <svg class="glyph" viewBox="0 0 48 40" shape-rendering="crispEdges">
+          <rect x="8" y="2" width="28" height="34" fill="#fff"/>
+          <rect x="10" y="4" width="24" height="6" fill="#ff8800"/>
+          <rect x="12" y="14" width="20" height="2" fill="#000"/>
+          <rect x="12" y="18" width="16" height="2" fill="#000"/>
+          <rect x="12" y="22" width="20" height="2" fill="#000"/>
+          <rect x="12" y="26" width="12" height="2" fill="#000"/>
+        </svg>
+        <span class="name">APT-10</span>
+      </button>
+      <button class="icon" style="left:18px;top:184px" data-open="watch">
+        <svg class="glyph" viewBox="0 0 48 40" shape-rendering="crispEdges">
+          <rect x="6" y="8" width="36" height="24" fill="#fff"/>
+          <rect x="8" y="10" width="32" height="4" fill="#0055aa"/>
+          <rect x="10" y="18" width="8" height="3" fill="#ff8800"/>
+          <rect x="10" y="24" width="8" height="3" fill="#000"/>
+          <rect x="22" y="18" width="16" height="3" fill="#000"/>
+          <rect x="22" y="24" width="12" height="3" fill="#000"/>
+        </svg>
+        <span class="name">WATCH</span>
+      </button>
+      <button class="icon" style="left:18px;top:268px" data-open="kev">
+        <svg class="glyph" viewBox="0 0 48 40" shape-rendering="crispEdges">
+          <rect x="10" y="4" width="28" height="32" fill="#fff"/>
+          <rect x="14" y="10" width="20" height="3" fill="#000"/>
+          <rect x="14" y="16" width="14" height="3" fill="#aa0000"/>
+          <rect x="14" y="22" width="20" height="3" fill="#000"/>
+          <rect x="14" y="28" width="10" height="3" fill="#0055aa"/>
+        </svg>
+        <span class="name">KEV</span>
+      </button>
+      <button class="icon" style="left:18px;top:352px" data-open="cli" data-cmd="about">
+        <svg class="glyph" viewBox="0 0 48 40" shape-rendering="crispEdges">
+          <rect x="8" y="6" width="32" height="28" fill="#ff8800"/>
+          <rect x="12" y="10" width="24" height="10" fill="#fff"/>
+          <circle cx="24" cy="26" r="4" fill="#000"/>
+        </svg>
+        <span class="name">SYS:</span>
+      </button>
+
+      <div id="win-cli" class="win cli active" style="left:66%;top:24px;width:32%;height:250px">
+        <div class="titlebar">
+          <button class="gadget close" title="Close">×</button>
+          <div class="title">SYS:ThreatTerm</div>
+          <button class="gadget right zoom" title="Zoom">□</button>
+          <button class="gadget right depth" title="Depth">▬</button>
+        </div>
+        <div class="body">
+          <div id="term">
+            <div id="term-log"></div>
+            <div class="prompt-row">
+              <span class="ps">1&gt;&nbsp;</span>
+              <input id="cmdline" autocomplete="off" spellcheck="false" aria-label="CLI">
+            </div>
+          </div>
+        </div>
+        <div class="resize"></div>
+      </div>
+
+      <div id="win-apts" class="win" hidden style="left:110px;top:24px;width:54%;height:58%">
+        <div class="titlebar">
+          <button class="gadget close">×</button>
+          <div class="title">APT-10:Dossier</div>
+          <button class="gadget right zoom">□</button>
+          <button class="gadget right depth">▬</button>
+        </div>
+        <div class="body">
+          <div class="apt-head">
+            <span>TOP 10 CURRENT APTs</span>
+            <span class="src" id="apt-src"></span>
+          </div>
+          <div id="dossier" class="dossier"></div>
+          <div id="apt-list"></div>
+        </div>
+        <div class="resize"></div>
+      </div>
+
+      <div id="win-watch" class="win" hidden style="left:110px;top:64%;width:calc(100% - 128px);height:32%">
+        <div class="titlebar">
+          <button class="gadget close">×</button>
+          <div class="title">NET:Watchlist</div>
+          <button class="gadget right zoom">□</button>
+          <button class="gadget right depth">▬</button>
+        </div>
+        <div class="body">
+          <div id="watch-stats"></div>
+          <div class="filters">
+            <button data-filter="all" class="on">ALL</button>
+            <button data-filter="curated">CAMPAIGNS</button>
+            <button data-filter="threatfox">THREATFOX</button>
+            <button data-filter="urlhaus">URLHAUS</button>
+            <button data-filter="feodo">FEODO</button>
+            <button data-filter="botnet">BOTNETS</button>
+            <button data-filter="pin">PINS</button>
+          </div>
+          <div id="watch-body"></div>
+        </div>
+        <div class="resize"></div>
+      </div>
+
+      <div id="win-kev" class="win" hidden style="left:360px;top:80px;width:480px;height:360px">
+        <div class="titlebar">
+          <button class="gadget close">×</button>
+          <div class="title">GOV:CISA-KEV</div>
+          <button class="gadget right zoom">□</button>
+          <button class="gadget right depth">▬</button>
+        </div>
+        <div class="body">
+          <div id="kev-meta"></div>
+          <div id="kev-body"></div>
+        </div>
+        <div class="resize"></div>
+      </div>
+    </div>
+
+    <div id="copper" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

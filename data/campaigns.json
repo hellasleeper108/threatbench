@@ -1,0 +1,138 @@
+{
+  "updated": "2026-08-12",
+  "note": "Curated persistent campaigns that do not show up cleanly as malware-family IOCs. Live botnet/malware rows are merged from ThreatFox, Feodo Tracker, and URLhaus at runtime.",
+  "campaigns": [
+    {
+      "id": "salt-typhoon-telecom",
+      "name": "Salt Typhoon carrier tap",
+      "kind": "apt-campaign",
+      "actor": "Salt Typhoon",
+      "status": "active",
+      "severity": "critical",
+      "first_seen": "2019",
+      "summary": "Long-dwell compromise of telecom/ISP edge devices and lawful-intercept systems. Packet capture + GRE egress.",
+      "refs": ["https://attack.mitre.org/groups/G1045/"]
+    },
+    {
+      "id": "flax-typhoon-botnet",
+      "name": "Flax Typhoon SOHO botnet",
+      "kind": "botnet",
+      "actor": "Flax Typhoon",
+      "status": "active",
+      "severity": "critical",
+      "first_seen": "2021",
+      "summary": "Integrity Technology Group-linked botnet of routers, NVRs and IoT used as stealth relays for PRC espionage.",
+      "refs": ["https://www.justice.gov/archives/opa/pr/court-authorized-operation-disrupts-worldwide-botnet-used-peoples-republic-china-state"]
+    },
+    {
+      "id": "volt-typhoon-preposition",
+      "name": "Volt Typhoon LOTL pre-position",
+      "kind": "apt-campaign",
+      "actor": "Volt Typhoon",
+      "status": "active",
+      "severity": "critical",
+      "first_seen": "2021",
+      "summary": "PRC actor (G1017) living off the land inside U.S. critical infrastructure — Guam and mainland — for possible disruption, not theft.",
+      "refs": ["https://attack.mitre.org/groups/G1017/", "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a"]
+    },
+    {
+      "id": "silk-typhoon-identity",
+      "name": "Silk Typhoon / Hafnium cloud identity",
+      "kind": "apt-campaign",
+      "actor": "Silk Typhoon (Hafnium)",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2021",
+      "summary": "Exchange-era cluster now tracked as Silk Typhoon (G0125). Continues to hunt Microsoft 365 / identity-adjacent targets.",
+      "refs": ["https://attack.mitre.org/groups/G0125/"]
+    },
+    {
+      "id": "lazarus-crypto",
+      "name": "Lazarus crypto + supply chain",
+      "kind": "apt-campaign",
+      "actor": "Lazarus / BlueNoroff",
+      "status": "active",
+      "severity": "critical",
+      "first_seen": "2016",
+      "summary": "Bybit ~$1.5B via Safe{Wallet} developer compromise; 2026 BlueNoroff Axios npm maintainer RAT.",
+      "refs": ["https://www.ic3.gov/psa/2025/psa250226"]
+    },
+    {
+      "id": "sandworm-zerolot",
+      "name": "Sandworm ZEROLOT wipers",
+      "kind": "apt-campaign",
+      "actor": "Sandworm (APT44)",
+      "status": "active",
+      "severity": "critical",
+      "first_seen": "2025",
+      "summary": "Destructive wipers against Ukrainian energy; attempted similar hit on Polish energy systems.",
+      "refs": ["https://attack.mitre.org/groups/G0034/"]
+    },
+    {
+      "id": "pawn-storm-office",
+      "name": "Pawn Storm Office 0-day",
+      "kind": "apt-campaign",
+      "actor": "APT28",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2026",
+      "summary": "Trend Micro H1 2026: APT28 weaponized a fresh Office zero-day against war-related defense and border-police targets.",
+      "refs": ["https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/2026-h1-apt-report-how-apts-are-weaponizing-trust-in-the-age-of-ai"]
+    },
+    {
+      "id": "apt42-spearspecter",
+      "name": "APT42 SpearSpecter",
+      "kind": "apt-campaign",
+      "actor": "APT42",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2025-09",
+      "summary": "TAMECAT against Gulf defense officials via WhatsApp, including family-member targeting. Tempo up in 2026.",
+      "refs": ["https://attack.mitre.org/groups/G1044/"]
+    },
+    {
+      "id": "scattered-spider",
+      "name": "Scattered Spider identity raids",
+      "kind": "criminal-campaign",
+      "actor": "Scattered Spider / UNC3944",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2022",
+      "summary": "Native-English help-desk vishing, Okta/Entra federation hijack, then ransomware (DragonForce). Retail, airlines, insurance.",
+      "refs": ["https://netlas.io/blog/top_10_critical_threat_actors/"]
+    },
+    {
+      "id": "cl0p-mft",
+      "name": "Cl0p mass MFT / ERP extortion",
+      "kind": "criminal-campaign",
+      "actor": "Cl0p / TA505",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2019",
+      "summary": "Encryption-optional data theft via file-transfer and ERP zero-days (Cleo, MOVEit, Oracle EBS). Hundreds of victims per burst.",
+      "refs": ["https://netlas.io/blog/top_10_critical_threat_actors/"]
+    },
+    {
+      "id": "akira-raas",
+      "name": "Akira RaaS",
+      "kind": "ransomware",
+      "actor": "Akira",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2023",
+      "summary": "Top-tier RaaS. Edge-VPN initial access, ESXi encryption, ~$244M reported proceeds and 600+ victims through late 2025.",
+      "refs": ["https://netlas.io/blog/top_10_critical_threat_actors/"]
+    },
+    {
+      "id": "qilin-raas",
+      "name": "Qilin (Agenda) RaaS",
+      "kind": "ransomware",
+      "actor": "Qilin",
+      "status": "active",
+      "severity": "high",
+      "first_seen": "2022",
+      "summary": "Most active ransomware brand in Q3 2025 after RansomHub collapsed. MSP cascade + Rust intermittent encryptor.",
+      "refs": ["https://netlas.io/blog/top_10_critical_threat_actors/"]
+    }
+  ]
+}

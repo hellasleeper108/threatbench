@@ -1,0 +1,220 @@
+{
+  "updated": "2026-08-12",
+  "ranking_source": {
+    "name": "CloudSEK",
+    "title": "Top 10 Advanced Persistent Threat (APT) Groups in 2026",
+    "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated",
+    "published": "2026-02-13",
+    "note": "Order follows CloudSEK's ranking of groups that dominated 2025 via large-scale espionage, identity attacks, and infrastructure access. Summaries are enriched from MITRE ATT&CK, CISA, and 2025–2026 public reporting."
+  },
+  "actors": [
+    {
+      "rank": 1,
+      "id": "salt-typhoon",
+      "name": "Salt Typhoon",
+      "aliases": ["Operator Panda", "GhostEmperor", "FamousSparrow", "UNC2286", "Earth Estries", "RedMike"],
+      "attribution": "PRC",
+      "sponsor": "MSS-linked / PRC state-backed",
+      "mitre": "G1045",
+      "first_seen": "2019",
+      "motivation": "Strategic communications espionage",
+      "targets": "Telecom carriers, ISPs, government",
+      "severity": "critical",
+      "summary": "PRC state-backed actor that lives inside carrier and ISP gear — Cisco and other edge boxes — to tap traffic at scale. Active since at least 2019; MITRE tracks packet sniffing, GRE tunnels, and config theft on compromised network devices.",
+      "campaign": "600+ organizations across 80+ countries, including nine U.S. telecoms and CALEA lawful-intercept systems. 2026 reporting adds South American carriers and new implants (TernDoor, PeerTime, BruteEntry).",
+      "ttps": ["T1190 edge-device exploit", "T1040 network sniffing", "T1572 GRE tunnels", "T1602 config dump"],
+      "sources": [
+        {"label": "MITRE G1045", "url": "https://attack.mitre.org/groups/G1045/"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"},
+        {"label": "Vectra APT brief", "url": "https://www.vectra.ai/topics/advanced-persistent-threat"}
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "flax-typhoon",
+      "name": "Flax Typhoon",
+      "aliases": ["Ethereal Panda", "Storm-0919"],
+      "attribution": "PRC",
+      "sponsor": "Integrity Technology Group (Beijing contractor)",
+      "mitre": null,
+      "first_seen": "2021",
+      "motivation": "Espionage support via rented infrastructure",
+      "targets": "Government, education, manufacturing, IT — Taiwan first, then global relays",
+      "severity": "critical",
+      "summary": "China-based group that prefers living-off-the-land and legitimate remote-access tools over custom malware. Distinguished by turning hundreds of thousands of SOHO routers, cameras, and IoT boxes into a quiet relay botnet.",
+      "campaign": "DoJ/FBI disruption (2024) documented control of 260k+ devices worldwide, including hundreds of thousands of unique U.S. devices. CloudSEK still ranks the cluster among 2025's dominant APTs because the botnet model survived as espionage plumbing.",
+      "ttps": ["T1219 remote access software", "T1078 valid accounts", "T1190 public-facing apps", "botnet C2 relay"],
+      "sources": [
+        {"label": "Microsoft Flax Typhoon", "url": "https://www.microsoft.com/en-us/security/blog/2023/08/24/flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations/"},
+        {"label": "DoJ botnet disruption", "url": "https://www.justice.gov/archives/opa/pr/court-authorized-operation-disrupts-worldwide-botnet-used-peoples-republic-china-state"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "mustang-panda",
+      "name": "Mustang Panda",
+      "aliases": ["Twill Typhoon", "Bronze President", "TA416", "Earth Preta", "RedDelta", "Stately Taurus"],
+      "attribution": "PRC",
+      "sponsor": "PRC state-aligned",
+      "mitre": "G0129",
+      "first_seen": "2017",
+      "motivation": "Political / geopolitical espionage",
+      "targets": "Governments, NGOs, churches, maritime and Southeast Asian policy targets",
+      "severity": "high",
+      "summary": "High-tempo China-aligned espionage shop. Classic kit is PlugX / ToneShell delivered by themed lure documents, then USB worming to jump air-gapped or poorly segmented networks.",
+      "campaign": "Through 2025: Frankenstein ToneShell in Myanmar, Yokai backdoor against Royal Thai Police (LNK+PDF), and a shift toward USB as a second initial-access path beside phishing.",
+      "ttps": ["T1566.001 spearphish attachment", "T1091 replication through removable media", "T1574.002 DLL side-loading"],
+      "sources": [
+        {"label": "MITRE G0129", "url": "https://attack.mitre.org/groups/G0129/"},
+        {"label": "Brandefense 2025 profile", "url": "https://brandefense.io/blog/mustang-panda-apt-2025/"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "apt17",
+      "name": "APT17",
+      "aliases": ["Deputy Dog", "Aurora Panda", "Heart Typhoon", "Hidden Lynx"],
+      "attribution": "PRC",
+      "sponsor": "PRC state-aligned",
+      "mitre": "G0025",
+      "first_seen": "2009",
+      "motivation": "Espionage / identity-driven access",
+      "targets": "U.S. government, defense, law firms, IT, mining, NGOs",
+      "severity": "high",
+      "summary": "Long-running China-based intrusion set (Deputy Dog / Aurora Panda). CloudSEK called out APT17 specifically for 2025 identity-centric operations — stealing and replaying credentials rather than burning custom implants.",
+      "campaign": "Historical hits on U.S. government and legal sector. 2025 dominance, per CloudSEK, came from large-scale identity attacks sitting alongside the Typhoon clusters rather than a single named worm.",
+      "ttps": ["T1078 valid accounts", "T1566 phishing", "identity replay"],
+      "sources": [
+        {"label": "MITRE G0025", "url": "https://attack.mitre.org/groups/G0025/"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "apt28",
+      "name": "APT28",
+      "aliases": ["Fancy Bear", "Forest Blizzard", "Pawn Storm", "Sofacy", "STRONTIUM", "Sednit"],
+      "attribution": "Russia",
+      "sponsor": "GRU (Unit 26165)",
+      "mitre": "G0007",
+      "first_seen": "2004",
+      "motivation": "Military / political intelligence",
+      "targets": "Defense ministries, political parties, media, war-adjacent orgs",
+      "severity": "critical",
+      "summary": "GRU's most public intrusion set. Spearphish and exploit-driven, with a habit of burning fresh Office / WinRAR bugs against targets tied to European security and the Ukraine war.",
+      "campaign": "Trend Micro's 2026 H1 APT report: Pawn Storm weaponized a fresh Office zero-day within weeks and hit defense ministries through border police. Parallel Earth Dahu activity kept milking a known WinRAR flaw.",
+      "ttps": ["T1203 exploitation for client exec", "T1566 spearphish", "T1587.001 custom malware"],
+      "sources": [
+        {"label": "MITRE G0007", "url": "https://attack.mitre.org/groups/G0007/"},
+        {"label": "Trend Micro 2026 H1 APT", "url": "https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/2026-h1-apt-report-how-apts-are-weaponizing-trust-in-the-age-of-ai"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "apt29",
+      "name": "APT29",
+      "aliases": ["Cozy Bear", "Midnight Blizzard", "The Dukes", "Nobelium", "Cloaked Ursa"],
+      "attribution": "Russia",
+      "sponsor": "SVR",
+      "mitre": "G0016",
+      "first_seen": "2008",
+      "motivation": "Strategic intelligence collection",
+      "targets": "Governments, diplomats, think tanks, cloud identity providers",
+      "severity": "critical",
+      "summary": "SVR's patient cloud-and-identity hunter. Prefers token theft, OAuth abuse, and supply-chain or trusted-provider pivots over noisy malware. Dwell measured in months.",
+      "campaign": "Post-SolarWinds tradecraft never really left: password-spray and token replay against Microsoft 365 / Entra, plus diplomatic mailbox collection. CISA still lists Midnight Blizzard as an SVR APT in 2026 assessments.",
+      "ttps": ["T1078.004 cloud accounts", "T1528 steal app token", "T1195 supply chain", "T1110 password spray"],
+      "sources": [
+        {"label": "MITRE G0016", "url": "https://attack.mitre.org/groups/G0016/"},
+        {"label": "NJCCIC 2026 assessment", "url": "https://www.cyber.nj.gov/threat-landscape/2026-cyber-threat-assessment"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "sandworm",
+      "name": "Sandworm",
+      "aliases": ["APT44", "Voodoo Bear", "IRIDIUM", "Telebots", "BlackEnergy"],
+      "attribution": "Russia",
+      "sponsor": "GRU Unit 74455",
+      "mitre": "G0034",
+      "first_seen": "2009",
+      "motivation": "Sabotage / destructive operations",
+      "targets": "Energy, ICS/OT, government, Ukraine and NATO-adjacent infrastructure",
+      "severity": "critical",
+      "summary": "GRU's destructive arm. Famous for BlackEnergy / NotPetya / Industroyer; in this cycle the signature is wiper malware against power and energy networks, not just espionage.",
+      "campaign": "2025–2026: ZEROLOT wiper against Ukrainian energy, plus a failed wiper attempt on Polish energy systems. Opposite pole of Lazarus — impact over theft.",
+      "ttps": ["T1485 data destruction", "T0881 ICS impact", "T1190 public-facing", "T1561 disk wipe"],
+      "sources": [
+        {"label": "MITRE G0034", "url": "https://attack.mitre.org/groups/G0034/"},
+        {"label": "Vectra APT brief", "url": "https://www.vectra.ai/topics/advanced-persistent-threat"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 8,
+      "id": "lazarus",
+      "name": "Lazarus Group",
+      "aliases": ["Hidden Cobra", "APT38", "Diamond Sleet", "Labyrinth Chollima", "BlueNoroff", "Andariel"],
+      "attribution": "DPRK",
+      "sponsor": "RGB (Reconnaissance General Bureau)",
+      "mitre": "G0032",
+      "first_seen": "2009",
+      "motivation": "Revenue generation + strategic espionage",
+      "targets": "Crypto exchanges, banks, defense, software supply chains",
+      "severity": "critical",
+      "summary": "North Korea's flagship APT. Dual-hatted: classic espionage plus industrial-scale theft that funds the regime. Sub-clusters include APT38 (finance) and BlueNoroff (crypto / IT workers).",
+      "campaign": "Bybit heist (~$1.5B) via a Safe{Wallet} supply-chain compromise — largest single APT theft on record. Netlas cites ~$2.02B stolen in 2025. 2026 H1: BlueNoroff hit the Axios npm maintainer (100M+ weekly downloads).",
+      "ttps": ["T1195 supply chain", "T1566 spearphish", "T1486 / theft of funds", "fake IT-worker lures"],
+      "sources": [
+        {"label": "MITRE G0032", "url": "https://attack.mitre.org/groups/G0032/"},
+        {"label": "FBI/IC3 Bybit PSA", "url": "https://www.ic3.gov/psa/2025/psa250226"},
+        {"label": "Trend Micro 2026 H1 APT", "url": "https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/2026-h1-apt-report-how-apts-are-weaponizing-trust-in-the-age-of-ai"}
+      ]
+    },
+    {
+      "rank": 9,
+      "id": "kimsuky",
+      "name": "Kimsuky",
+      "aliases": ["Velvet Chollima", "Black Banshee", "APT43", "Emerald Sleet", "Thallium"],
+      "attribution": "DPRK",
+      "sponsor": "RGB / 16322 unit (reported)",
+      "mitre": "G0094",
+      "first_seen": "2012",
+      "motivation": "Foreign-policy and nuclear-related intelligence",
+      "targets": "South Korean government, U.S. policy shops, think tanks, journalists",
+      "severity": "high",
+      "summary": "DPRK's dedicated collection team. Lower dollar-value than Lazarus, higher volume of spearphish, credential harvest, and strategic documents aimed at Korean peninsula policy.",
+      "campaign": "Remains in every 2025–2026 'most active APT' list. Typical cycle: spoofed ministry mail, browser-in-the-middle or stealer, then mailbox rule persistence. Complements Lazarus cash operations with intelligence take.",
+      "ttps": ["T1566 spearphish", "T1557 adversary-in-the-middle", "T1114 email collection"],
+      "sources": [
+        {"label": "MITRE G0094", "url": "https://attack.mitre.org/groups/G0094/"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    },
+    {
+      "rank": 10,
+      "id": "apt42",
+      "name": "APT42",
+      "aliases": ["Charming Kitten", "Mint Sandstorm", "TA453", "Calendar Team", "Damselfly"],
+      "attribution": "Iran",
+      "sponsor": "IRGC Intelligence Organization",
+      "mitre": "G1044",
+      "first_seen": "2015",
+      "motivation": "Human-targeted surveillance / intelligence",
+      "targets": "Journalists, academics, NGOs, dissidents, Gulf defense officials",
+      "severity": "high",
+      "summary": "IRGC-linked social-engineering specialist. Patient, personal, and mailbox-focused: fake journalists, conference invites, and cloud phishing rather than noisy network worms.",
+      "campaign": "SpearSpecter (Sep 2025) dropped TAMECAT on senior Gulf defense officials, including family-member targeting. Check Point and others describe an elevated 2026 tempo after regional strikes.",
+      "ttps": ["T1566.002 spearphish link", "T1539 steal web session", "T1078 valid accounts", "WhatsApp lures"],
+      "sources": [
+        {"label": "MITRE G1044", "url": "https://attack.mitre.org/groups/G1044/"},
+        {"label": "Hawk Eye APT42 advisory", "url": "https://hawk-eye.io/wp-content/advisories/apt42-threat-advisory.html"},
+        {"label": "CloudSEK 2026 ranking", "url": "https://www.cloudsek.com/knowledge-base/top-apt-groups-dominated"}
+      ]
+    }
+  ]
+}
