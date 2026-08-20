@@ -140,5 +140,6 @@ PRESS L FOR LATER</pre>
     );
   }
 
-  setTimeout(show, DELAY);
+  const quick = /(?:\?|&)kettle=1(?:&|$)/.test(location.search);
+  setTimeout(show, quick ? 600 : DELAY);
 })();
